@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+*{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth; }
+    @media only screen and (max-width: 75em) {
+      html {
+        font-size: 59%; } }
+    @media only screen and (max-width: 56.25em) {
+      html {
+        font-size: 56%; } }
+    @media only screen and (min-width: 112.5em) {
+      html {
+        font-size: 65%; } }
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    box-sizing: border-box;
+    position: relative;
+    line-height: 1.5;
+    font-family: sans-serif;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: #dce3f4;
+    box-shadow:  20px 20px 60px #bbc1cf,
+                 -20px -20px 60px #fdffff;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+main{
+    flex-grow: 1;
+}
+@media only screen and (min-width: 993px){
+    main{
+        display: flex;
+    }
+}
+
+#menu {
+  position: fixed;
+  top: -100vh; /* Oculta el menú fuera del área visible */
+  left: 0;
+  width: 100%;
+  height: 20vh;
+  background-color: #dce3f4;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: top 0.3s ease; /* Agrega una transición suave para animar el desplazamiento */
+  z-index: 3;
+}
+@media only screen and (min-width: 993px){
+  #menu{
+    position: fixed;
+    left: -100%;
+    width: 385px;
+    height: 100vh;
+    transition: left 0.3s ease;
+    z-index: 3;
+  }
+}
+
+#menu.open {
+  top: 0; /* Muestra el menú desplazándolo desde arriba */
+}
+@media only screen and (min-width: 993px){
+  #menu.open{
+    left: 0;
+  }
+}
+
+#menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+#city-search{
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+}
+
+
+#btn-close{
+  position: absolute;
+  color: black;
+  right: 0;
+  top: 0;
+  margin: 2px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#btn-search{
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #132c66;
+  color: #f5f5f5;
+  cursor: pointer;
+}
+
+.container-search{
+  margin-top: 20px;
+
+}
+
+.home-info{
+    color: #fff;
+    background: linear-gradient(to right, rgba(25, 6, 190, 0.8), rgba(12, 74, 121, 0.8)), url(../assets/common-bg.svg);
+    background-position: center;
+    height: 100vh;
+    position: relative; 
+}
+@media only screen and (min-width: 993px){
+    .home-info{
+        height: auto;
+        width: 40%;
+    }
+}
+
+.home-days{
+    height: 100vh;
+    min-height: 80rem;
+    max-height: 120rem;
+    position: relative; 
+}
+.home-info__button-principal{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btn-search{
+    background-color: rgb(4, 112, 4);
+    color: white;
+    border-radius: 4px;
+    padding: 8px;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+.btn-ubication{
+    background-color: rgb(75, 72, 72);
+    color: white;
+    border-radius: 4px;
+    padding: 8px;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+.btn-ubication:hover{
+  background-color: rgba(19, 6, 138, 0.733);
+}
+
+.home-info__principal-highlights{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-weather{
+    width: 128px;
+    height: 128px;
+    margin: 0 auto; /* Centra horizontalmente la imagen */
+}
+
+.info-temperature{
+    font-size: 6.5rem;
+}
+
+.info-condicion{
+    font-size: 3.5rem;
+}
+
+.info-day{
+    font-size: 2.5rem;
+}
+
+.info-city{
+  font-size: 2.5rem;
+}
+
+.home-info-add{
+    display: flex;
+    flex-direction: column;
+}
+@media only screen and (min-width: 993px){
+    .home-info-add{
+        width: 100%;
+    }
+}
+
+.home-info-add__cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    
+}
+
+.home-info-add__highligths{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.info-highlights{
+    font-size: 2.1rem;
+}
+
+/*Cards info-days*/
+.cardContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+  }
+  
+  .card {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+    background-color: rgba(19, 6, 138, 0.733);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+  }
+  @media only screen and (min-width: 993px){
+    .card{
+        width: 128px;
+        height: 164px;
+    }
+  }
+  
+  .date {
+    font-weight: 700;
+    font-size: 1.9em;
+    letter-spacing: 1.2px;
+    color: white;
+  }
+  
+  .minmaxContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .min,.max {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0px 20px;
+    gap: 4px;
+  }
+  
+  .max {
+    align-items: flex-start;
+    border-left: 2px solid white;
+  }
+  
+  .maxHeading,.minHeading {
+    font-size: 3rem;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .maxTemp,.minTemp {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+  }
+
+  /*Card highlights*/
+  .card-highlight{
+    position: relative;
+    width: 300px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+    background-color: rgba(19, 6, 138, 0.733);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+    cursor: pointer;
+  }
+  @media only screen and (min-width: 993px){
+    .card-highlight{
+        width: 380px;
+        height: 200px;
+    }
+  }
+
+  .title-highlight{
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  .highlight{
+    color: #fff;
+    font-size: 4.2rem;
+    font-weight: 700;
+  }
+
+footer{
+    background-color: #f5f5f5;
+    padding: 20px;
+    font-size: 1.1rem;
+}
+
+.ubication-info{
+  height: 400px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.error-info{
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+}
