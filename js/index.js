@@ -26,7 +26,7 @@ document.getElementById('location').addEventListener('click', function () {
 })
 
 async function fetchWeather(city) {
-  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}&units=metric&lang=es`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}&units=metric&lang=es`;
 
   await fetch(url)
     .then(response => response.json())
@@ -48,7 +48,7 @@ async function fetchWeather(city) {
 function renderWeather(weatherData) {
   const { name, main, weather, wind, sys } = weatherData;
   
-  const image = `http://openweathermap.org/img/wn/${weather[0].icon}@4x.png`
+  const image = `https://openweathermap.org/img/wn/${weather[0].icon}@4x.png`
   const lat = weatherData.coord.lat;
   const lon = weatherData.coord.lon;
 
